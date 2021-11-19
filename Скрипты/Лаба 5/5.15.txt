@@ -1,0 +1,6 @@
+echo Enter number
+read Y
+if [[ $Y > 7 ]]
+then echo $Y is greater than 7
+else echo $Y is not greater than 7
+fi

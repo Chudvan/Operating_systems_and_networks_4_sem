@@ -1,0 +1,7 @@
+[ -f buffer1 ] && rm buffer1
+[ -f buffer2 ] && rm buffer2
+cat $1 | sort -u > buffer1
+cat $1 | sort > buffer2
+comm -23 buffer2 buffer1 | sort -u > $1
+rm buffer1
+rm buffer2

@@ -1,0 +1,19 @@
+echo Enter names
+read a
+a=$(echo $a | tr ' ' '\n' | sort | tr ' ' '\n')
+count=0
+sep=' '
+for i in $a
+do
+	if [[ $count < 3 ]]
+	then 
+		str=${str}${i}$sep
+	else
+		if [[ $count = 3 ]]
+		then
+			echo $str
+		fi
+		echo "extra>$i"
+	fi
+	let count=count+1
+done

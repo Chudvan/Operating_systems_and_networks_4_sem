@@ -1,0 +1,4 @@
+echo Enter your name ; read name;
+echo Enter your address; read address;
+echo Enter your birthdate; read birthdate
+echo Hello, $name! You born in $birthdate.  Your address is $address

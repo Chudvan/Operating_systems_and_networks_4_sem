@@ -1,0 +1,12 @@
+./$1 &
+echo $1 already started, PID=$!
+wait $!
+echo $1 finished
+
+while true
+do
+echo Working
+sleep 1
+done
+
+kill -9 12003

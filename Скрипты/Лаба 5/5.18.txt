@@ -1,0 +1,7 @@
+if [[ $# = 3 ]]
+then
+	echo $*
+else 
+	echo Invalid syntax. Need 3 arguments.
+	exit 1
+fi

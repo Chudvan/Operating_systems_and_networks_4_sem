@@ -1,0 +1,8 @@
+[ ! -d text ] && mkdir text
+for i in $(ls *.txt .txt .*.txt)
+do
+	if [ -f $i ]
+	then	
+		mv $i text
+	fi
+done

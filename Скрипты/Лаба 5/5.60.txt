@@ -1,0 +1,15 @@
+read a
+numa=${#a}
+read b
+numb=${#b}
+if (( $numa > $numb ))
+then
+	echo $a longer than $b
+else
+	if (( $numa < $numb ))
+	then
+		echo $a shorter than $b
+	else
+		echo lengths of $a and $b are equal
+	fi
+fi

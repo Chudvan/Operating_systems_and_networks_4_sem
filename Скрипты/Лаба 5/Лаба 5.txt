@@ -1,0 +1,65 @@
+5) 1) name_shell ./name_file
+	2)вначале проги #/usr/bin/name_shell
+6) privet - файл
+10) ? - переменная, хранящая последний код программы
+	2 варианта программы: 1)["$Y"="I"]
+	2) test "$Y"="I"
+14) 5.14
+#Проверка ["..."="..."]:
+# 0 - истина, 1 - ложь, 2 - ошибка 
+18) if ["$?" -eq 3]
+then
+echo The arguments are: $*
+else
+echo Error: less than 3 arguments
+fi
+19)
+echo Enter words:
+read a b c d
+echo arg1=$a
+echo arg2=$b
+echo arg3=$c
+if [ "$d" != "" ]
+then
+	for i in $d
+	do
+	echo Extra: $i
+	done
+fi
+20) 
+21) echo Starting test...
+for i
+do
+if [ $(ls -a | grep^"$i"$) ]
+then
+type=$(ls -la | grep "$i"$|cut -c1) - ошибка вроде
+
+echo type=$type
+case
+	$type in
+	"-") echo $i is a regular file
+		;;
+	"d") echo $i is a directory
+		;;
+	"p") echo $i is a pipe
+		;;
+	"l") echo $i is a link
+		;;
+	case
+else
+echo $i not found
+fi
+
+done
+5.22)echo Enter id to check
+read id
+x=$(cat /etc/passwd | cut -f3- -d":" | grep ^$id:)
+if [ -z "$x" ]
+echo Not registered
+else 
+echo $x | cut -f1, 4 -d ":"
+fi
+
+-z - если код завершения 0 и строка x пустая
+5.23) Лучше case (фото), т.к. = - это полная эквивалентность
+5.34) -f1,2 (2 - затем, что разные терминалы, он затруднится куда писать)

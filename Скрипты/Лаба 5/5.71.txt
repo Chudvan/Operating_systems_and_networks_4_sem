@@ -1,0 +1,5 @@
+varnum=$(set | wc -l)
+varenv=$(env | wc -l)
+let varlocal=varnum-varenv
+echo $varnum variables in whole
+echo $varlocal local variables

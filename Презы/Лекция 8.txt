@@ -1,0 +1,8 @@
+1) Смысл cpio?
+2) что за магнитная лента? накопитель? архив?
+3) Не могу ни создать архив, ни записать с помощью опций что-либо: tar -uf arch art1
+tar: arch: No such file or directory
+---
+tar c arch
+tar: /dev/rmt/0: Permission denied
+4) Как использовать maxdepth, mindepth, depth

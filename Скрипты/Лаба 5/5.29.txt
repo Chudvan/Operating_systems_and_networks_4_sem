@@ -1,0 +1,8 @@
+echo Enter numbers
+read numbers
+sum=0
+for i in $numbers
+do
+let sum=sum+i
+done
+echo $sum

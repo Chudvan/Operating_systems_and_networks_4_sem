@@ -1,0 +1,35 @@
+! - хранит PID последнего запущенного процесса
+
+first:
+while true
+do
+echo hello > file1
+sleep 2
+done
+
+second:
+while true
+do
+echo 111111 > file2
+sleep 2
+done
+
+manager:
+nice -6 ./first &
+pid1=$!
+nice -5 ./second &
+pid1=$!
+maxsize=10
+while
+sleep 1
+do
+size1=$(ls -l file1 | tr -s " " | cut -f5 -d" ")
+size2=$(ls -l file2 | tr -s " " | cut -f5 -d" ")
+echo size1=$size1
+echo size2=$size2
+if [ \( $size1 -ge $maxsize \) -o \( $size2 -ge $maxsize \) ]
+then
+kill -9 $pid1
+kill -9 $pid2
+if [ \( $size1 -gt $maxsize \) ]
+done

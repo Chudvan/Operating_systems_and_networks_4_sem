@@ -1,0 +1,13 @@
+for i in $(ls)
+do
+        if [ -f $i ]
+        then
+		curLength=${#i}
+		buffer=${i%.exe}
+		newLength=${#buffer}
+                if [ $curLength -eq $newLength ]
+		then
+			mv $i $i.exe
+		fi
+        fi
+done

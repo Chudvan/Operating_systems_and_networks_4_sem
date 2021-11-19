@@ -1,0 +1,24 @@
+help(){
+	echo Usage: -d for date
+	echo -w for working users
+	echo -l for ls
+}
+
+if [ $# -eq 0 ]
+then
+	help
+fi
+
+for i in $*
+do
+	case $i in
+		"-d")date
+			;;
+		"-w")echo $(who | tr -s ' ' | cut -d' ' -f1)
+			;;
+		"-l")ls
+			;;
+		*)help
+			;;
+		esac
+done

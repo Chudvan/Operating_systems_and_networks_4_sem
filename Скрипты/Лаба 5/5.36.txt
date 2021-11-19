@@ -1,0 +1,5 @@
+while [ "$(who | tr -s ' ' | cut -d' ' -f1 | grep ^${1}$)" = "" ]
+do
+	sleep 20
+done
+echo $1 is HERE!

@@ -1,0 +1,18 @@
+if [ -n "$*" ]
+then
+	i=0
+	max=0
+	while [ $i -lt $1 ]
+	do
+		let i=i+1 
+		echo "Enter number #$i"
+		read x
+		if [ $x -gt $max ]
+		then
+			max=$x
+		fi
+	done
+	echo max=$max
+else
+	echo No arguments
+fi

@@ -1,0 +1,6 @@
+echo Filename is ${0#./}
+echo Number of arguments $#
+for i in $*
+do
+	echo The length of $i is ${#i}
+done

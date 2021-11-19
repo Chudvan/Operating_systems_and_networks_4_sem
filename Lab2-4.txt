@@ -1,0 +1,58 @@
+-----
+2.25) alias del='echo Введите полный путь к удаляемому поддереву каталогов; read address; rm -ri $address;'
+2.26) alias point='ls ~+ .*'
+2.27) alias rub='echo Введи путь к файлу, который нужно удалить;read name; mv $name ~/.basket'
+alias rst='echo Выберите файл, для восстановления из корзины; ls ~/.basket; read nameF; mv ~/.basket/$nameF ~+;'
+alias clean='rm -ri ~/.basket/'
+2.28) alias joke='echo Ваши файлы заражены! Следующие файлы будут уничтожены: ;'
+2.29) alias joke2='echo Ваши файлы заражены! Следующие файлы будут уничтожены: ; ls -a; unalias joke2;'
+2.31) а) ls .*
+б) ls *.txt
+в) ls *my* *.*my* .*my*
+г) ls my???
+д) ls *.c .c *.f .f *.p .p
+2.32) touch '*'
+2.33) ''
+-----
+4.1) myCom=$(date | cut -c5-10)
+banner $myCom
+4.7)  alias create='echo Введи имя файла; read fileN; touch $fileN; echo Введи содержимое файла; cat > $fileN;'
+4.11) alias users='number=$(who|wc -l); let number=number-1; who | tail -$number | cut -f1 -d\ '
+4.12) ls -la | cut -c1-10,58-
+      ls -al | cut -c2- | tr -s ' ' | cut -f1,9 -d' '
+4.13) ls -al | cut -c2- | tr -s ' ' | cut -f1,9 -d' ' | tee spisok | wc -l
+4.14) skip
+4.15) cat /etc/passwd | sort -k1 -t':'
+4.16) cat /etc/passwd | sort -k3 -t':' -n
+4.17) cat /etc/passwd | grep 'st' | tee users | wc -l
+4.18) cat /etc/passwd | grep -v 'st' | tee users | wc -l
+4.19) touch prefix.infix.suffix
+ls prefix.infix.suffix
+ls prefix.infix.suffix | cut -f1,2 -d'.'
+ls prefix.infix.suffix  | cut -f2- -d'.'
+ls prefix.infix.suffix  | cut -f2 -d'.'
+4.20) who | cut -f1 -d' ' | sort -u | wc -l (Ещё удаляем дубликаты)
+4.21) who | cut -f1 -d' ' | sort -u | tee users | wc -l
+4.22) skip
+4.23) cat /etc/passwd | cut -f1,3,6 -d':' | tr ':' ' '
+4.25) cat /etc/passwd | head -10 | tail -6 | sort -n -k3 -t':'
+4.26) cat file1 file2 file3 | tee file4
+4.27) Не работает в одну строку. Больше - изи вводим текст и ctrl+d (а не ctrl+c)
+4.28) cat file1 file2 file3 | tee полный путь file4 | tee полный путь file5
+4.29) cat file | tee file4 - неотсортированный | sort > file5
+4.30) cat file4 | /usr/xpg4/bin/tr "[:lower:]" "[:upper:]" | cat > file4 (Нужно было посмотреть путь к команде(вначале man))
+4.31)skip
+4.32)skip
+4.33) cat /etc/passwd | grep '/home/'
+4.34) cat /etc/passwd | tee ttt | grep '/home/' | tee | wc -l; echo 'from '; cat ttt | wc -l; rm ttt
+-----
+vi proba
+Esc i - переход в режим ввода
+echo hello world
+Esc - переход в командный режим
+ZZ (shift) - сохранить и выйти
+chmod +x proba - добавление права на исполнение
+./proba - запустить программу
+
+Дома: пропробовать отредактировать файл из ЛР №3
+посмотреть 5.1 - 5.20 

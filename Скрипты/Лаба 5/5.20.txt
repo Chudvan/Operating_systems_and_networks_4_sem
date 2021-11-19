@@ -1,0 +1,22 @@
+hours=$(date '+%H')
+min=$(date '+%M')
+
+if (( $hours >= 6 )) && (( $hours <= 11 ))
+then
+        echo Good morning
+fi
+
+if (( $hours >= 12 )) && (( $hours <= 17 ))
+then
+        echo Good afternoon
+fi
+
+if (( $hours >= 18 )) && (( $hours <= 22 ))
+then
+        echo Good evening
+fi
+
+if (( $hours >= 22 )) || (( $hours <= 5 ))
+then
+        echo Good night
+fi

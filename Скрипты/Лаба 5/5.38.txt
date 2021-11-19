@@ -1,0 +1,21 @@
+bin=~/.recycler
+[ ! -d $bin ] && mkdir $bin
+for i
+do
+	if [ -f $i ]
+	then
+		mv $i $bin
+	else
+		case $i in
+		"-l") ls -l $bin
+			;;
+		"-a") ls -l | head -1 | cut -d' ' -f 2
+			;;
+		"-d") rm -r $bin
+		mkdir $bin
+			;;
+		*)echo file $i unexist or option error
+			;;
+		esac
+	fi
+done

@@ -1,0 +1,10 @@
+kill -l | tr -s " " | tr "\t" " " | tr " " "\n" | grep SIG > signals
+for i in $(cat signals)
+do
+trap `echo $i $(date)>> events` $(echo $i | cut -c4-)
+done
+
+while true
+do
+sleep 1
+done

@@ -1,0 +1,15 @@
+echo Enter username
+read username
+userStatus=$(cat /etc/passwd | cut -f1 -d":" | grep ^$username$)
+if [ ${#userStatus} -ne 0 ]
+then
+	echo user $username
+	dir=$(cat /etc/passwd | grep ^$username |  cut -f6 -d":")
+	echo home-directory $dir
+	echo PRIMARY GROUP
+	groups $username | cut -f1 -d' '
+	echo list of home-dir:
+	ls $dir
+else
+	echo User unexist
+fi

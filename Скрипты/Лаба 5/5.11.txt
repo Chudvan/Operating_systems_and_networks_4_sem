@@ -1,0 +1,9 @@
+sep=' '
+for i in $(ls -a .*my* *my* [Aa]*)
+do
+if [ -f $i ]
+then
+	str=${str}${i}$sep
+fi
+done
+echo $str

@@ -1,0 +1,39 @@
+if
+	(( $# % 2 ))
+then
+	echo Invalid syntax
+	exit 1
+fi
+
+for i in $*
+do
+	if 
+		[ $# -eq 0 ]
+	then
+		echo End of program
+		exit 0
+	fi
+	if 
+		[ $1 -ge $2 ]
+	then
+		echo "($1, $2] is invalid range"
+		exit 2
+	fi
+	echo "Range is ($1, $2]"
+	echo "Enter current number"
+	read number
+	if 
+		[ $number = "end" ]
+	then
+		echo End of program
+		exit 0
+	fi
+	if 
+		[ $number -gt $1 -a $number -le $2 ] 
+	then
+		echo Number there
+	else
+		echo Number not there
+	fi
+	shift 2
+done

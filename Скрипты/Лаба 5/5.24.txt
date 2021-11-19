@@ -1,0 +1,25 @@
+if [ ! -f $2 ]
+then
+        cp $1 $2
+else
+        if [ -s $2 ]
+        then
+                echo "Receiver still exist. Copy?"
+                read ans
+		ans=$(echo $ans | cut -c1)
+                if [ $ans = "y" ]
+                then
+			echo "For > enter 1, for >>  enter 2"
+			read ans
+			ans=$(echo $ans | cut -c1)
+			case $ans in
+			1)cat $1 > $2
+				;;
+        		2)cat $1 >> $2
+				;;
+			*)echo "Invalid syntax. Need 1 or 2."
+                		;;
+			esac
+		fi
+        fi
+fi

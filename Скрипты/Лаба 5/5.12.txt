@@ -1,0 +1,11 @@
+if [ $# -eq 0 ]
+then
+	echo Invalid syntax. Need Arguments.
+else
+	if [ -f $1 ]
+	then
+        	echo File $1 exist
+	else
+        	echo File $1 is not exist
+	fi
+fi

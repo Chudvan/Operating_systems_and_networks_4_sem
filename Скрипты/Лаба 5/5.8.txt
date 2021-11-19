@@ -1,0 +1,9 @@
+i=$#
+sep=' '
+while [[ $i > 0 ]]
+do
+        eval cur='$'$i
+        str=${str}${cur}$sep
+        let i=i-1
+done
+echo $str

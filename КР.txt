@@ -1,0 +1,6 @@
+alias path="ls -l $PATH | grep 'drwx' | tr -s ' ' | cut -f9 -d' '"
+alias usergr="echo ¬веди им€ пользовател€; read name; groups$name"
+PATH=$PATH:.
+echo $PATH | tr ':' '\n'
+
+

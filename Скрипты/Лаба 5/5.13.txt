@@ -1,0 +1,32 @@
+case $# in
+1)
+if [ -d $1 ]
+then
+	echo Directory $1 is exist in current Directory
+else
+	if [ -f $1 ]
+	then
+		echo File $1 is exist in current Directory
+	else
+		echo File $1 is not exist in current Directory
+	fi
+fi
+;;
+2)
+if [ -d $2/$1 ]
+then
+	echo Directory $1 is exist in $2 Directory
+else
+	if [ -f $2/$1 ]
+	then
+		echo File $1 is exist in $2 Directory
+	else
+		echo File $1 is not exist in $2 Directory
+	fi
+fi
+;;
+*)
+echo Usage: shell-prog [file] [directory] in [directory]
+echo shell-prog [file] in current Directory
+;;
+esac

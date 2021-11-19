@@ -1,0 +1,2 @@
+yy=$(ls -l $1 | grep ^- | tr -s " " | sort -k5 -n | tail -1 | cut -f9 -d" ")
+echo ${1}/$yy

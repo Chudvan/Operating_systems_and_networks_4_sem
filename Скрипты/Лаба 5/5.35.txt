@@ -1,0 +1,7 @@
+timer=0
+while [[ $timer != 60 ]]
+do
+	echo $0 is working
+	let timer=timer+5
+	sleep 5
+done

@@ -1,0 +1,34 @@
+while
+	[ 1 ]
+do
+	echo "Range is (2, 10]"
+	echo "Enter current number"
+	read number
+	if 
+		[ $number = "end" ]
+	then
+		echo End of program
+		exit 0
+	fi
+	if 
+		[ $number -gt 2 -a $number -le 10 ] 
+	then
+		echo Number there
+	else
+		echo Number not there
+	fi
+done
+
+/*
+case number in
+[3-10])echo Number there
+	;;
+ ||
+end)echo End of program
+exit [0]
+	;;
+*)echo Error
+exit [1]
+	;;
+esac
+*/

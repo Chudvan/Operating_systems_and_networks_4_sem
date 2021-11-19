@@ -1,0 +1,11 @@
+[ -f shablon ] && rm shablon
+
+
+echo $* | tr " " "\n" > shablon
+ls | grep -f shablon > spisok
+for i in $(cat spisok)
+do
+echo file $i has $(cat $i | wc -l) line
+done
+
+rm spisok shablon

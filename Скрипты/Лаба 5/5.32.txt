@@ -1,0 +1,9 @@
+read buffer
+sep='\n'
+while [ $buffer != "end" ]
+do
+	str=${str}${buffer}$sep
+	read buffer
+done
+echo Program result
+echo -e $str

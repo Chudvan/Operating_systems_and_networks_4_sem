@@ -1,0 +1,5 @@
+MYNAME=`whoami`
+banner HELLO!, $MYNAME
+date
+echo They are here
+who | cut -f1 -d" "| sort -u

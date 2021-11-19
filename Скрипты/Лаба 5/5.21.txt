@@ -1,0 +1,21 @@
+for i
+do
+	if [ $(ls -a | grep ^${i}$) ]
+	then
+		type=$(ls -la | grep ' '${i}$ | cut -c1)
+
+		echo type=$type
+		case $type in
+      		  "-") echo $i is a regular file
+                ;;
+     		  "d") echo $i is a directory
+                ;;
+      		  "p") echo $i is a pipe
+                ;;
+      		  "l") echo $i is a link
+                ;;
+     	 	  esac
+	else
+		echo $i not found
+	fi
+done

@@ -1,0 +1,16 @@
+echo Do you want current directory?
+read ans
+ans=$(echo $ans | cut -c1)
+if [ "$ans" = "y" ]
+then
+        ls
+else
+        echo give full address
+        read ad
+        if [ -d $ad ]
+        then
+                ls $ad
+        else
+                echo current directory unexists
+        fi
+fi

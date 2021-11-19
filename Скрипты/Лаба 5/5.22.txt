@@ -1,0 +1,8 @@
+echo Enter username
+read username
+if [ $(cat /etc/passwd | cut -d: -f1 | grep ^$username$) ]
+then
+	echo $(cat /etc/passwd | grep ^$username: | cut -d: -f6)
+else
+	echo Error. User was not registered.
+fi

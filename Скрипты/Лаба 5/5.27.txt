@@ -1,0 +1,8 @@
+echo Enter file
+read file
+if [ -f $file ]
+then
+	cat $file | sort -u > $file
+else
+	echo File is unexist
+fi

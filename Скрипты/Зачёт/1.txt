@@ -1,0 +1,11 @@
+while [ true ]
+do
+	hour=$(date | cut -f5 -d" " | cut -d':' -f1)
+	min=$(date | cut -f5 -d" " | cut -d':' -f2)
+	if [ \( $hour -eq $1 \) -a \( $min -eq $2 \) ]
+	then
+		echo $3
+		break
+	fi
+	sleep 1
+done

@@ -1,0 +1,19 @@
+status=$(who | tr -s ' ' | cut -d' ' -f1 | grep ^${1}$)
+while [ ${#status} -eq 0 ]
+do
+	sleep 20
+	status=$(who | tr -s ' ' | cut -d' ' -f1 | grep ^${1}$)
+done
+
+echo $1 is online!
+[ -f protocol ] && rm protocol
+echo $1 in system in $(date '+%d.%m.%y %H:%M:%S') > protocol
+
+while [ ${#status} -ne 0 ]
+do
+	status=$(who | tr -s ' ' | cut -d' ' -f1 | grep ^${1}$)
+	sleep 20
+done
+
+echo $1 is offline!
+echo $1 out of the system in $(date '+%d.%m.%y %H:%M:%S') >> protocol

@@ -1,0 +1,6 @@
+echo Enter lrange
+read l
+echo Enter rrange
+read r
+let count=$r-$l+1
+cat $1 | head -$r | tail -$count

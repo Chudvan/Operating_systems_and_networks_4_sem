@@ -1,0 +1,43 @@
+ПЕРВЫЙ ВАРИАНТ:
+curTime(){
+	echo $(date '+ %d.%m.%y %H:%M:%S')
+}
+PS1='$(curTime)'
+
+---
+Вопрос: Как сделать переменные окружения изменёнными для последующих сессий, а не только для текущей?
+Права админа?
+---
+ОДНА ИЗ НАИБОЛЕЕ УДАЧНЫХ ВЕРСИЙ:
+
+curTime(){
+        printf "$(date '+%d.%m.%y %H:%M:%S')"
+}
+
+PS1='$(curTime)'
+while [ true ]
+do
+        echo
+        curTime
+        sleep 1
+done
+
+В bash: 
+source ./cur
+source ./cur &
+---
+ПОПЫТКА ОТКЛЮЧИТЬ ПРИ ЗАПУСКЕ VI
+curTime(){
+        printf "\n$(date '+%d.%m.%y %H:%M:%S')"
+}
+while [ true ]
+do
+        if [ "$(ps | grep vi)" ]
+        then
+                sleep 10000
+        fi
+        curTime
+        sleep 1
+done
+---
+Вопрос: Как отключить раюоту фонового процесса во время запуска vi? set -v и "$(ps | grep vi)" не помогают...
